@@ -2,14 +2,10 @@
 
 {% block body %}
 
-    {% for post in collections.posts %}
+    {% for post in collections.posts | limit(20) %}
+                
+        {% include '_post.html' with post %}
         
-        {% if loop.index < 36 %}
-        
-            {% include '_post.html' with post %}
-        
-        {% endif %}
-
     {% endfor %}
 
 {% endblock %}

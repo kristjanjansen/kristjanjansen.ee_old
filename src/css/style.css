@@ -12,7 +12,7 @@
     margin: 0;
 }
 body {
-  font-size: 95%;
+  font-size: 100%;
   line-height: 1.6;
   font-family: "Lato", sans-serif;
     margin: 0 auto;
@@ -27,7 +27,7 @@ h1, h2, h3, h4, h5 {
   color: #777;
 }
 h1 {
-  font-size: 2.6em;
+  font-size: 2.5em;
   margin-bottom: 0.75em;
   line-height: 1.12em;
   letter-spacing: -0.03em;
@@ -49,7 +49,7 @@ h2 {
 h3 {
   font-size: 1.4em;
   margin-top: 0.5em;
-  margin-bottom: 0.5em;
+  margin-bottom: 0.75em;
 }
 h4 {
   font-size: 1.25em;
@@ -107,6 +107,10 @@ header {
   margin-bottom: 1.5em;
   border-bottom: 1px solid #e2e2e2;
 }
+.message {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 1.5em;
+}
 footer {
   color: #000;
   opacity: 0.5;
@@ -117,13 +121,16 @@ footer {
 footer a, footer a:link {
   color: #000;
 }
-.pager {
-  text-align: center;
-}
+
 .post {
   border-bottom: 1px solid #e2e2e2;
   padding-bottom: 1em;
   margin-bottom: 1em;
+  color: #333;
+}
+.post img, .post iframe, .post embed {
+  max-width: 100%;
+  margin-bottom: 0.5em;
 }
 .meta {
   color: #ccc;
@@ -138,20 +145,16 @@ footer a, footer a:link {
 .twitter .meta {
   margin-top: -1em;
 }
-.content {
-  color: #333;
-}
-.post img, .post iframe, .post embed {
-  max-width: 100%;
-  margin-bottom: 0.5em;
-}
-.message {
-  border-bottom: 1px solid #ccc;
-  padding-bottom: 1.5em;
+
+
+.pager {
+  text-align: center;
 }
 .previous {
   margin-right: 2em;
 }
+
+
 .cv table {
   margin-bottom: 1em;
   width: 100%;
@@ -169,6 +172,22 @@ footer a, footer a:link {
   padding-right: 1em;
   text-align: left;
   width: 45px;
+}
+
+@media only screen and (max-width : 480px) {
+
+  h1 {
+    font-size: 1.7em;
+  }
+
+  h2 {
+    font-size: 1.4em;
+  }
+
+  .container {
+    margin-top: 1em;
+  }
+  
 }
 
 @media print {
