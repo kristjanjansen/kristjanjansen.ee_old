@@ -1,0 +1,20 @@
+{
+  "name": "metal",
+  "private": true,
+  "dependencies": {
+    "metalsmith": "~1.7.0",
+    "metalsmith-collections": "^0.7.0",
+    "metalsmith-each": "^0.1.1",
+    "metalsmith-filenames": "^1.0.0",
+    "metalsmith-ignore": "^0.1.2",
+    "metalsmith-layouts": "^1.4.2",
+    "metalsmith-markdown": "^0.2.1",
+    "metalsmith-permalinks": "^0.4.0",
+    "moment": "^2.10.6",
+    "ntwitter": "^0.5.0",
+    "each": "^0.5.2",
+    "metalsmith-jekyll-dates": "^0.0.5",
+    "swig": "^1.4.2",
+    "request": "^2.67.0"
+  }
+}

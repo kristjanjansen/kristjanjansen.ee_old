@@ -1,0 +1,36 @@
+<article class="
+            post
+            {% if post.twitter_url %}twitter{% endif %}
+        ">
+
+            {% if !post.twitter_url %}
+                
+                <a href="/{{post.path}}/"><h2>{{post.title}}</h2></a>
+            
+            {% endif %}
+
+            <div class="content">
+
+                {{ post.contents | raw }}
+            
+            </div>
+
+            <div class="meta">
+
+                {{ moment(post.date).format('D. M. YYYY') }}
+
+                {% for tag in post.tags %}
+
+                    {{ tag }}
+                
+                {% endfor %}
+
+                {% if post.twitter_url %}
+                    
+                    in <a href="{{ post.twitter_url }}">Twitter</a>
+                
+                {% endif %}
+
+            </div>
+
+        </article>

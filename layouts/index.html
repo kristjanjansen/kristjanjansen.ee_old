@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+    {% for post in collections.posts %}
+        
+        {% if loop.index < 36 %}
+        
+            {% include '_post.html' with post %}
+        
+        {% endif %}
+
+    {% endfor %}
+
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% if message %}
+
+    {% block message %}
+
+        <div class="message">
+
+            {{ message | raw }}
+
+        </div>
+
+    {% endblock %}
+
+{% endif %}
+
+{% block body %}
+    
+    {% for post in collections.posts %}
+
+        {% if post.tags && post.tags.indexOf(tag) > -1 %}
+
+            {% include '_post.html' with post %}
+
+        {% endif %}
+
+    {% endfor %}
+
+{% endblock %}

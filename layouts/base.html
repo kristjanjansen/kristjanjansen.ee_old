@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+  
+  <title>{% block title %}{% endblock %}</title>
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+  <link rel="stylesheet" type="text/css" href="/css/style.css" />
+
+</head>
+<body>
+
+    <div class="container">
+
+        <header>
+          
+            <h1><a href="/">{{ site.title }}</a> {{ site.slogan | raw  }}</h1>
+        
+        </header>
+
+        {% block message %}{% endblock %}
+
+        {% block body %}{% endblock %}
+
+        <footer>
+            
+            {{  site.footer | raw }}
+        
+        </footer>
+
+    </div>
+
+</body>
+</html>
