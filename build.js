@@ -54,6 +54,11 @@ metalsmith(__dirname)
                     return post.tags.indexOf(filterTag) > -1
                 });
             },
+            'notwitter': function(collection) {
+                return collection.filter(function(post) {
+                    return ! post.hasOwnProperty('twitter_url')
+                });
+            },
         }
     }))
     .use(layouts({

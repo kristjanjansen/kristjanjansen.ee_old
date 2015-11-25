@@ -16,13 +16,9 @@
 
 {% block body %}
     
-    {% for post in collections.posts %}
+    {% for post in collections.posts | tag(tag) %}
 
-        {% if post.tags && post.tags.indexOf(tag) > -1 %}
-
-            {% include '_post.html' with post %}
-
-        {% endif %}
+        {% include '_post.html' with post %}
 
     {% endfor %}
 

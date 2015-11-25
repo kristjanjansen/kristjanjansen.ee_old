@@ -10,9 +10,7 @@
     <name>{{ site.title }}</name>
   </author>
 
-    {% for post in collections.posts %}
-
-        {% if not post.twitter_url %} 
+    {% for post in collections.posts | notwitter | limit(15) %}
 
           <entry>
             <id>{{ site.url }}/{{ post.path }}</id>
@@ -25,8 +23,6 @@
             </author>
             <content type="html">{{ post.content | raw }}</content>
           </entry>
-
-        {% endif %}
 
     {% endfor %}
  
