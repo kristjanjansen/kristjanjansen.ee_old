@@ -12,7 +12,8 @@
         "podcast_feed_itunes": "",
         "podcast_description": "",
         "podcast_image": "",
-        "podcast_category": ""
+        "podcast_category": "",
+        "podcast_subcategory": ""
     },
     "twitter": {
         "screen_name": "",

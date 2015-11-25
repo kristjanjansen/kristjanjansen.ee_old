@@ -45,7 +45,7 @@ metalsmith(__dirname)
     .use(swigHelpers({
         filters: {
             'limit': function(collection, limit) {
-                return collection.slice(0, limit);
+                return collection.slice(0, limit)
             },
             'tag': function(collection, filterTag) {
                 if (! filterTag) return collection
@@ -59,6 +59,9 @@ metalsmith(__dirname)
                     return ! post.hasOwnProperty('twitter_url')
                 });
             },
+            'images': function(content) {
+                return content.toString().replace(/files\/images\//g, 'files/images/medium/')
+            }
         }
     }))
     .use(layouts({
@@ -70,3 +73,4 @@ metalsmith(__dirname)
         if (err) { console.log(err) }
     })
 
+// Rinku.auto_link(input.gsub('--', '&mdash;').gsub('files/images', 'files/images/medium'))
