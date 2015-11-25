@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" version="2.0">
+    <channel>
+        <title>{{ podcast_title }}</title>
+        <link>{{ site.url }}/{{ podcast_url }}</link>
+        <language>en-us</language>
+        <itunes:summary>{{ podcast_description }}</itunes:summary>
+        <description>{{ podcast_description }}</description>
+        <itunes:author>{{ site.title }}</itunes:author>
+        <itunes:owner>
+            <itunes:name>{{ site.title }}</itunes:name>
+            <itunes:email>{{ site.email }}</itunes:email>
+        </itunes:owner>
+        <itunes:image href="{{ site.url }}/{{ podcast_image }}" />
+        <itunes:category text="{{ podcast_category }}"></itunes:category>
+        <pubDate>{{ moment(date).format('ddd, MM MMM YYYY HH:mm:ss ZZ') }}</pubDate>
+        <lastBuildDate>{{ moment(date).format('ddd, MM MMM YYYY HH:mm:ss ZZ') }}</lastBuildDate>
+        {% for post in collections.posts | notwitter | tag('podcast') | limit(15) %}
+            <item>
+                <title>{{ post.title }}</title>
+                <link>{{ site.url }}/{{ post.url }}</link>
+                <pubDate>{{ moment(post.date).format('ddd, MM MMM YYYY HH:mm:ss ZZ') }}</pubDate>
+                <guid>{{ site.url }}/{{ post.url }}</guid>
+                <description>{{ post.content | raw }}</description>
+                <itunes:summary>{{ post.content | raw }}</itunes:summary>
+                <enclosure url="{{ site.url }}/{{ post.podcast_url }}" length="{{ post.podcast_length }}" type="audio/mpeg" />
+                <itunes:duration>{{ post.podcast_duration }}</itunes:duration>
+            </item>
+        {% endfor %}
+    </channel> 
+</rss>

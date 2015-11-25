@@ -1,0 +1,9 @@
+---
+layout: itunes.xml
+podcast_title: Kristjan Jansen Podcast
+podcast_url: podcast
+podcast_feed: http://kristjanjansen.ee/podcast.xml
+podcast_feed_itunes: itpc://kristjanjansen.ee/podcast.xml
+podcast_description: From Brazil psychedelia to Colombian afrobeat to East Germany funk
+podcast_image: files/images/podcast.jpg
+---

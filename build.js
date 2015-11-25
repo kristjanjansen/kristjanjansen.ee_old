@@ -1,24 +1,26 @@
-metalsmith = require('metalsmith')
 collections = require('metalsmith-collections')
+buildDate = require('metalsmith-build-date');
 each = require('metalsmith-each')
 filenames = require('metalsmith-filenames') 
 ignore = require('metalsmith-ignore')
 jekyllDates = require('metalsmith-jekyll-dates')
 layouts = require('metalsmith-layouts')
 markdown = require('metalsmith-markdown')
-permalinks = require('metalsmith-permalinks')
+metalsmith = require('metalsmith')
 moment = require('moment')
+permalinks = require('metalsmith-permalinks')
 swigHelpers = require('metalsmith-swig-helpers');
 
 metalsmith(__dirname)
     .use(filenames())
+    .use(buildDate())
     .use(jekyllDates())
     .metadata({
         site: {
             title: 'Kristjan Jansen',
             url: 'http://kristjanjansen.ee',
             email: 'kristjan.jansen@gmail.com',
-            slogan: '&#44 interaction designer. I <a href="/teaching">teach</a> and <a href="/presentations">talk</a> and have a <a href="/podcast">podcast</a>. Here\'s my <a href="/files/kristjan_jansen_portfolio.pdf">portfolio</a>. Find me in <a href="http://twitter.com/kristjanjansen">Twitter</a>, <a href="http://facebook.com/kristjanjansen">Facebook</a>, <a href="http://ee.linkedin.com/pub/kristjan-jansen/15/b06/778">LinkedIn</a>, <a href="http://github.com/kristjanjansen">Github</a>, <a href="https://instagram.com/kristjanjansen/">Instagram< and <a href="mailto:kristjan.jansen@gmail.com">Gmail</a>.',
+            slogan: '&#44 interaction designer. I <a href="/teaching">teach</a> and <a href="/presentations">talk</a> and have a <a href="/podcast">podcast</a>. Here\'s my <a href="/files/kristjan_jansen_portfolio.pdf">portfolio</a>. Find me in <a href="http://twitter.com/kristjanjansen">Twitter</a>, <a href="http://facebook.com/kristjanjansen">Facebook</a>, <a href="http://ee.linkedin.com/pub/kristjan-jansen/15/b06/778">LinkedIn</a>, <a href="http://github.com/kristjanjansen">Github</a>, <a href="https://instagram.com/kristjanjansen/">Instagram</a> & <a href="mailto:kristjan.jansen@gmail.com">Gmail</a>',
             footer: 'All content in this site is licenced under <a href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons</a> licence.'
         }
     })
