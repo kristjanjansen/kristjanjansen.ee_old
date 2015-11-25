@@ -7,10 +7,10 @@ var request = require('request');
 var config = require('./config.json')
 
 var twit = new ntwitter({
-    consumer_key: config.consumer_key,
-    consumer_secret: config.consumer_secret,
-    access_token_key: config.access_token_key,
-    access_token_secret: config.access_token_secret
+    consumer_key: config.twitter.consumer_key,
+    consumer_secret: config.twitter.consumer_secret,
+    access_token_key: config.twitter.access_token_key,
+    access_token_secret: config.twitter.access_token_secret
 });
 
 var screen_name = config.screen_name

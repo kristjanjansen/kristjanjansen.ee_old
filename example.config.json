@@ -1,8 +1,24 @@
 {
-    "consumer_key": "",
-    "consumer_secret": "",
-    "access_token_key" : "",
-    "access_token_secret": "",
-    "screen_name": "",
-    "ga": ""
+    "site": {
+        "title": "",
+        "url": "",
+        "email": "",
+        "slogan": "",
+        "footer": "",
+        "analytics_id": "",
+        "podcast_title": "",
+        "podcast_url": "",
+        "podcast_feed": "",
+        "podcast_feed_itunes": "",
+        "podcast_description": "",
+        "podcast_image": "",
+        "podcast_category": ""
+    },
+    "twitter": {
+        "screen_name": "",
+        "consumer_key": "",
+        "consumer_secret": "",
+        "access_token_key" : "",
+        "access_token_secret": ""
+    }
 }
