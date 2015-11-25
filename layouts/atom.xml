@@ -1,29 +1,26 @@
 <?xml version="1.0"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
- 
-  <title>{{ site.title }}</title>
-  <link href="{{ site.url }}"/>
-  <link type="application/atom+xml" rel="self" href="{{ site.url }}/atom.xml"/>
-  <updated>{{ moment.toISOString() }}</updated>
-  <id>{{ site.url }}</id>
-  <author>
-    <name>{{ site.title }}</name>
-  </author>
+    <title>{{ site.title }}</title>
+    <link href="{{ site.url }}"/>
+    <link type="application/atom+xml" rel="self" href="{{ site.url }}/{{ self }}"/>
+    <updated>{{ moment.toISOString() }}</updated>
+    <id>{{ site.url }}</id>
+    <author>
+        <name>{{ site.title }}</name>
+    </author>
 
-    {% for post in collections.posts | notwitter | limit(15) %}
-
-          <entry>
-            <id>{{ site.url }}/{{ post.path }}</id>
-            <link type="text/html" rel="alternate" href="{{ site.url }}/{{ post.path }}"/>
-            <title>{{ post.title }}</title>
-            <published>{{ moment(post.date).toISOString() }}</published>
-            <updated>{{ moment(post.date).toISOString() }}</updated>
-            <author>
-              <name>{{ site.title }}</name>
-            </author>
-            <content type="html">{{ post.content | raw }}</content>
-          </entry>
-
+    {% for post in collections.posts | notwitter | tag(tag) | limit(15) %}
+    <entry>
+        <id>{{ site.url }}/{{ post.path }}</id>
+        <link type="text/html" rel="alternate" href="{{ site.url }}/{{ post.path }}"/>
+        <title>{{ post.title }}</title>
+        <published>{{ moment(post.date).toISOString() }}</published>
+        <updated>{{ moment(post.date).toISOString() }}</updated>
+        <author>
+            <name>{{ site.title }}</name>
+        </author>
+        <content type="html">{{ post.content | raw }}</content>
+    </entry>
     {% endfor %}
  
 </feed>

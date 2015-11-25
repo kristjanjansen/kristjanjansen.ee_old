@@ -49,6 +49,7 @@ metalsmith(__dirname)
                 return collection.slice(0, limit);
             },
             'tag': function(collection, filterTag) {
+                if (! filterTag) return collection
                 return collection.filter(function(post) {
                     if (!post.tags) return false
                     return post.tags.indexOf(filterTag) > -1
