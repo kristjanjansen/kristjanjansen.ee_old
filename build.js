@@ -1,7 +1,8 @@
-collections = require('metalsmith-collections')
 buildDate = require('metalsmith-build-date');
+collections = require('metalsmith-collections')
 each = require('metalsmith-each')
 filenames = require('metalsmith-filenames') 
+htmlMinifier = require("metalsmith-html-minifier");
 ignore = require('metalsmith-ignore')
 jekyllDates = require('metalsmith-jekyll-dates')
 layouts = require('metalsmith-layouts')
@@ -11,7 +12,7 @@ moment = require('moment')
 permalinks = require('metalsmith-permalinks')
 swigHelpers = require('metalsmith-swig-helpers');
 
-var config = require('./config.json')
+config = require('./config.json')
 
 metalsmith(__dirname)
     .use(filenames())
@@ -71,6 +72,7 @@ metalsmith(__dirname)
         engine: 'swig',
         moment: moment
     }))
+//  .use(htmlMinifier())
     .build(function (err) {
         if (err) { console.log(err) }
     })
