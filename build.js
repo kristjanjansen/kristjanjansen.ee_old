@@ -44,8 +44,9 @@ metalsmith(__dirname)
     }))
     .use(swigHelpers({
         filters: {
-            'limit': function(collection, limit) {
-                return collection.slice(0, limit)
+            'limit': function(collection, limit, index) {
+                if (!index) index = 0 
+                return collection.slice((index - 1) * limit, index * limit)
             },
             'tag': function(collection, filterTag) {
                 if (! filterTag) return collection

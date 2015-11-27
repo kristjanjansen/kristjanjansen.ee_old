@@ -2,10 +2,26 @@
 
 {% block body %}
 
-    {% for post in collections.posts | limit(50) %}
+    {% for post in collections.posts | limit(30, index) %}
                 
         {% include '_post.html' with post %}
         
     {% endfor %}
+
+    {{ index }}
+
+    {% if (index == 2) %}
+        <a href="/">Older</a>
+    {% endif %}
+
+    {% if (index > 2) %}
+        <a href="/page/{{ index - 1 }}">Older</a>
+    {% endif %}
+
+    {% if (index < 4) %}
+        <a href="/page/{{ index + 1}}">Newer</a>
+    {% endif %}
+
+
 
 {% endblock %}
