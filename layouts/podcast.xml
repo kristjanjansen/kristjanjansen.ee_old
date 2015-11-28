@@ -12,15 +12,17 @@
             <itunes:email>{{ site.email }}</itunes:email>
         </itunes:owner>
         <itunes:image href="{{ site.url }}/{{ podcast_image }}" />
-        <itunes:category text="{{ site.podcast_category }}"></itunes:category>
+        <itunes:category text="{{ site.podcast_category }}">
+            <itunes:category text="{{ site.podcast_subcategory }}" />
+        </itunes:category>
         <pubDate>{{ moment(date).format('ddd, MM MMM YYYY HH:mm:ss ZZ') }}</pubDate>
         <lastBuildDate>{{ moment(date).format('ddd, MM MMM YYYY HH:mm:ss ZZ') }}</lastBuildDate>
         {% for post in collections.posts | notwitter | tag('podcast') | limit(15) %}
             <item>
                 <title>{{ post.title }}</title>
-                <link>{{ site.url }}/{{ post.url }}</link>
+                <link>{{ site.url }}/{{ post.path }}</link>
                 <pubDate>{{ moment(post.date).format('ddd, MM MMM YYYY HH:mm:ss ZZ') }}</pubDate>
-                <guid>{{ site.url }}/{{ post.url }}</guid>
+                <guid>{{ site.url }}/{{ post.path }}</guid>
                 <description>{{ post.content | raw }}</description>
                 <itunes:summary>{{ post.content | raw }}</itunes:summary>
                 <enclosure url="{{ site.url }}/{{ post.podcast_url }}" length="{{ post.podcast_length }}" type="audio/mpeg" />

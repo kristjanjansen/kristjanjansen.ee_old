@@ -2,10 +2,12 @@
 
 {% block body %}
 
-    {% for post in collections.posts | limit(20) %}
+    {% for post in collections.posts | limit(30, index) %}
                 
         {% include '_post.html' with post %}
         
     {% endfor %}
+
+    {% include '_pager.html' with index %}
 
 {% endblock %}

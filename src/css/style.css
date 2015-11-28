@@ -150,8 +150,12 @@ footer a, footer a:link {
 .pager {
   text-align: center;
 }
-.previous {
-  margin-right: 2em;
+.older {
+  display: inline;
+}
+.newer {
+  display: inline;
+  margin-left: 1em;
 }
 
 
