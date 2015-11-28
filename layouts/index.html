@@ -8,20 +8,6 @@
         
     {% endfor %}
 
-    {{ index }}
-
-    {% if (index == 2) %}
-        <a href="/">Older</a>
-    {% endif %}
-
-    {% if (index > 2) %}
-        <a href="/page/{{ index - 1 }}">Older</a>
-    {% endif %}
-
-    {% if (index < 4) %}
-        <a href="/page/{{ index + 1}}">Newer</a>
-    {% endif %}
-
-
+    {% include '_pager.html' with index %}
 
 {% endblock %}

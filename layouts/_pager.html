@@ -1,0 +1,23 @@
+<div class="pager">
+
+    <div class="older">
+
+    {% if (index < 9) %}
+        <a href="/page/{{ index + 1}}">← Older</a>
+    {% endif %}
+
+    </div>
+
+    <div class="newer">
+
+    {% if (index == 2) %}
+        <a href="/">Newer →</a>
+    {% endif %}
+
+    {% if (index > 2) %}
+        <a href="/page/{{ index - 1 }}">Newer →</a>
+    {% endif %}
+
+    </div>
+
+</div>
