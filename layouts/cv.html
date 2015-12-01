@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block message %}
+
+    <div class="message">
+
+        {{ message | raw }}
+
+    </div>
+
+{% endblock %}
+
+{% block body %}
+
+    <div class="cv">
+
+        {{ contents | raw }}
+
+    </div>
+
+{% endblock %}
